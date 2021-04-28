@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Email List</title>
+
+    <!-- Link Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Link Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- Link Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <h1>Lista di {{emailArrayLength}} email generate tramite API:</h1>
+        <ol v-if="emailArray.length == emailArrayLength">
+          <li v-for="email in emailArray">{{ email }}</li>
+        </ol>
+        <div v-else class="loading">
+          <img src="gif/Spinner-1s-200px.gif" alt="Loading" />
+        </div>
+      </div>
+    </div>
+    <!-- Link script.js -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
